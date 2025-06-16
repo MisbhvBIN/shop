@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mężczyźni - Style Haven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-nav">
+                    <a href="index.html" class="logo">SH</a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="men.html" class="active">Mężczyźni</a></li>
+                            <li><a href="women.html">Kobiety</a></li>
+                            <li><a href="children.html">Dzieci</a></li>
+                            <li><a href="sale.html" class="sale-link">Sale</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-actions">
+                    <form class="search-form">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="search" placeholder="Szukaj" id="searchInput">
+                        </div>
+                    </form>
+                    <div class="auth-links" id="authLinks">
+                        <a href="login.html">Zaloguj</a>
+                        <span>|</span>
+                        <a href="register.html">Zarejestruj</a>
+                    </div>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <div class="container">
+                <div class="category-header">
+                    <h1>Mężczyźni</h1>
+                    <p>Odkryj najnowsze trendy w modzie męskiej</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <div class="products-controls">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="sortBy">Sortuj według:</label>
+                            <select id="sortBy">
+                                <option value="name">Nazwa</option>
+                                <option value="price-low">Cena: od najniższej</option>
+                                <option value="price-high">Cena: od najwyższej</option>
+                                <option value="rating">Ocena</option>
+                                <option value="newest">Najnowsze</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="priceRange">Zakres cen:</label>
+                            <select id="priceRange">
+                                <option value="all">Wszystkie</option>
+                                <option value="0-100">0 - 100 zł</option>
+                                <option value="100-200">100 - 200 zł</option>
+                                <option value="200-300">200 - 300 zł</option>
+                                <option value="300+">300+ zł</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="colorFilter">Kolor:</label>
+                            <select id="colorFilter">
+                                <option value="all">Wszystkie</option>
+                                <option value="white">Biały</option>
+                                <option value="black">Czarny</option>
+                                <option value="blue">Niebieski</option>
+                                <option value="gray">Szary</option>
+                                <option value="navy">Granatowy</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="menProducts">
+                    <!-- Products will be loaded here -->
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>Brak wyników</h3>
+                    <p>Nie znaleziono produktów spełniających kryteria wyszukiwania.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Style Haven</h3>
+                    <p>Twoje modowe miejsce dla całej rodziny. Znajdź najnowsze trendy i stylowe ubrania.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategorie</h3>
+                    <ul>
+                        <li><a href="men.html">Mężczyźni</a></li>
+                        <li><a href="women.html">Kobiety</a></li>
+                        <li><a href="children.html">Dzieci</a></li>
+                        <li><a href="sale.html" class="sale-link">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informacje</h3>
+                    <ul>
+                        <li><a href="about.html">O nas</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="shipping.html">Dostawa</a></li>
+                        <li><a href="returns.html">Zwroty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Śledź nas</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Twój email">
+                            <button type="submit">Zapisz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Style Haven. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-title">Powiadomienie</div>
+            <div class="toast-message">Treść powiadomienia</div>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/category.js"></script>
+</body>
+</html>
