@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizacja zamówienia - Style Haven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-nav">
+                    <a href="index.html" class="logo">SH</a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="men.html">Mężczyźni</a></li>
+                            <li><a href="women.html">Kobiety</a></li>
+                            <li><a href="children.html">Dzieci</a></li>
+                            <li><a href="sale.html" class="sale-link">Sale</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-actions">
+                    <form class="search-form">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="search" placeholder="Szukaj">
+                        </div>
+                    </form>
+                    <div class="auth-links" id="authLinks">
+                        <a href="login.html">Zaloguj</a>
+                        <span>|</span>
+                        <a href="register.html">Zarejestruj</a>
+                    </div>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="checkout-section">
+            <div class="container">
+                <div class="checkout-header">
+                    <h1>Realizacja zamówienia</h1>
+                    <div class="checkout-steps">
+                        <div class="step active">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Dostawa</span>
+                        </div>
+                        <div class="step active">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Płatność</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Potwierdzenie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-content">
+                    <div class="checkout-form">
+                        <form id="checkoutForm">
+                            <!-- Shipping Information -->
+                            <div class="form-section">
+                                <h2><i class="fas fa-truck"></i> Informacje o dostawie</h2>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">Imię *</label>
+                                        <input type="text" id="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Nazwisko *</label>
+                                        <input type="text" id="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefon *</label>
+                                    <input type="tel" id="phone" required placeholder="+48 123 456 789">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Adres *</label>
+                                    <input type="text" id="address" required placeholder="ul. Przykładowa 123">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">Miasto *</label>
+                                        <input type="text" id="city" required placeholder="Warszawa">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postalCode">Kod pocztowy *</label>
+                                        <input type="text" id="postalCode" required placeholder="00-001">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Kraj *</label>
+                                    <select id="country" required>
+                                        <option value="">Wybierz kraj</option>
+                                        <option value="PL" selected>Польша</option>
+                                        <option value="DE">Германия</option>
+                                        <option value="CZ">Чехия</option>
+                                        <option value="SK">Словакия</option>
+                                        <option value="UA">Украина</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Payment Method -->
+                            <div class="form-section">
+                                <h2><i class="fas fa-credit-card"></i> Sposób płatności</h2>
+                                <div class="payment-methods">
+                                    <label class="payment-method">
+                                        <input type="radio" name="paymentMethod" value="card" checked>
+                                        <div class="payment-option">
+                                            <i class="fas fa-credit-card"></i>
+                                            <span>Karta płatnicza</span>
+                                            <div class="card-icons">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                                <i class="fab fa-cc-amex"></i>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="payment-method">
+                                        <input type="radio" name="paymentMethod" value="blik">
+                                        <div class="payment-option">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <span>BLIK</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-method">
+                                        <input type="radio" name="paymentMethod" value="transfer">
+                                        <div class="payment-option">
+                                            <i class="fas fa-university"></i>
+                                            <span>Przelew bankowy</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Card Details -->
+                            <div class="form-section" id="cardDetails">
+                                <h3>Dane karty płatniczej</h3>
+                                <div class="card-form">
+                                    <div class="form-group">
+                                        <label for="cardNumber">Numer karty *</label>
+                                        <div class="card-input">
+                                            <input type="text" id="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                                            <div class="card-type" id="cardType"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardName">Imię i nazwisko posiadacza karty *</label>
+                                        <input type="text" id="cardName" required placeholder="JAN KOWALSKI" style="text-transform: uppercase;">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cardExpiry">Data ważności *</label>
+                                            <input type="text" id="cardExpiry" required placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardCvv">CVV *</label>
+                                            <div class="cvv-input">
+                                                <input type="text" id="cardCvv" required placeholder="123" maxlength="4">
+                                                <i class="fas fa-question-circle" title="3-4 цифры на обратной стороне карты"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BLIK Details -->
+                            <div class="form-section" id="blikDetails" style="display: none;">
+                                <h3>6-cyfrowy kod BLIK *</h3>
+                                <div class="form-group">
+                                    <label for="blikCode">6-cyfrowy kod BLIK *</label>
+                                    <input type="text" id="blikCode" placeholder="123456" maxlength="6">
+                                </div>
+                                <p class="payment-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    Otwórz aplikację bankową i wygeneruj kod BLIK
+                                </p>
+                            </div>
+
+                            <!-- Bank Transfer Details -->
+                            <div class="form-section" id="transferDetails" style="display: none;">
+                                <h3>Przelew bankowy</h3>
+                                <div class="bank-list">
+                                    <label class="bank-option">
+                                        <input type="radio" name="bank" value="pkobp">
+                                        <div class="bank-info">
+                                            <img src="/placeholder.svg?height=30&width=60" alt="PKO BP">
+                                            <span>PKO Bank Polski</span>
+                                        </div>
+                                    </label>
+                                    <label class="bank-option">
+                                        <input type="radio" name="bank" value="pekao">
+                                        <div class="bank-info">
+                                            <img src="/placeholder.svg?height=30&width=60" alt="Pekao">
+                                            <span>Bank Pekao</span>
+                                        </div>
+                                    </label>
+                                    <label class="bank-option">
+                                        <input type="radio" name="bank" value="mbank">
+                                        <div class="bank-info">
+                                            <img src="/placeholder.svg?height=30&width=60" alt="mBank">
+                                            <span>mBank</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" required>
+                                    <span class="checkmark"></span>
+                                    Akceptuję <a href="terms.html" target="_blank">regulamin</a> i <a href="privacy.html" target="_blank">politykę prywatności</a>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter">
+                                    <span class="checkmark"></span>
+                                    Chcę otrzymywać informacje o nowościach i promocjach
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <a href="cart.html" class="btn btn-outline">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Powrót do koszyka
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-lock"></i>
+                                    Zapłać za zamówienie
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <div class="summary-card">
+                            <h2>Twoje zamówienie</h2>
+                            <div class="order-items" id="orderItems">
+                                <!-- Order items will be loaded here -->
+                            </div>
+                            <div class="summary-calculations">
+                                <div class="summary-row">
+                                    <span>Produkty</span>
+                                    <span id="itemsTotal">0.00 zł</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Dostawa</span>
+                                    <span id="shippingCost">0.00 zł</span>
+                                </div>
+                                <div class="summary-row discount" id="discountRow" style="display: none;">
+                                    <span>Zniżka</span>
+                                    <span id="discountAmount">-0.00 zł</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row total">
+                                    <span>Razem</span>
+                                    <span id="orderTotal">0.00 zł</span>
+                                </div>
+                            </div>
+                            
+                            <div class="promo-code">
+                                <div class="promo-input">
+                                    <input type="text" id="promoCode" placeholder="Kod promocyjny">
+                                    <button type="button" id="applyPromo" class="btn btn-outline btn-sm">Zastosuj</button>
+                                </div>
+                            </div>
+
+                            <div class="security-info">
+                                <div class="security-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Bezpieczna płatność SSL</span>
+                                </div>
+                                <div class="security-item">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Darmowa dostawa od 150 zł</span>
+                                </div>
+                                <div class="security-item">
+                                    <i class="fas fa-undo"></i>
+                                    <span>30 dni na zwrot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Style Haven</h3>
+                    <p>Twoje modowe miejsce dla całej rodziny. Znajdź najnowsze trendy i stylowe ubrania.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategorie</h3>
+                    <ul>
+                        <li><a href="men.html">Mężczyźni</a></li>
+                        <li><a href="women.html">Kobiety</a></li>
+                        <li><a href="children.html">Dzieci</a></li>
+                        <li><a href="sale.html" class="sale-link">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informacje</h3>
+                    <ul>
+                        <li><a href="about.html">O nas</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="shipping.html">Dostawa</a></li>
+                        <li><a href="returns.html">Zwroty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Śledź nas</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Twój email">
+                            <button type="submit">Zapisz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Style Haven. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-title">Powiadomienie</div>
+            <div class="toast-message">Treść powiadomienia</div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Przetwarzanie płatności...</p>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
