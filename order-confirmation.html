@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potwierdzenie zamówienia - Style Haven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/fontawesome.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-nav">
+                    <a href="index.html" class="logo">SH</a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="men.html">Mężczyźni</a></li>
+                            <li><a href="women.html">Kobiety</a></li>
+                            <li><a href="children.html">Dzieci</a></li>
+                            <li><a href="sale.html" class="sale-link">Sale</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-actions">
+                    <form class="search-form">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="search" placeholder="Szukaj">
+                        </div>
+                    </form>
+                    <div class="auth-links" id="authLinks">
+                        <a href="login.html">Zaloguj</a>
+                        <span>|</span>
+                        <a href="register.html">Zarejestruj</a>
+                    </div>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="confirmation-section">
+            <div class="container">
+                <div class="confirmation-card">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1>Zamówienie złożone!</h1>
+                    <p>Dziękujemy za złożenie zamówienia w Style Haven. Potwierdzenie zamówienia zostało wysłane na Twój adres email.</p>
+                    <div class="order-number">
+                        <p>Numer zamówienia:</p>
+                        <p id="orderNumber" class="order-id">#SH0000</p>
+                    </div>
+                    <p class="order-info">Będziemy informować Cię o statusie Twojego zamówienia. Możesz również śledzić jego status w sekcji "Moje zamówienia" w swoim koncie.</p>
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-shopping-bag"></i> Kontynuuj zakupy
+                        </a>
+                        <a href="account-orders.html" class="btn btn-outline">Sprawdź status zamówienia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="confirmation-actions">
+    <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-shopping-bag"></i> Kontynuuj zakupy
+    </a>
+    <a href="order-tracking.html" class="btn btn-outline">Śledź zamówienie</a>
+</div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Style Haven</h3>
+                    <p>Twoje modowe miejsce dla całej rodziny. Znajdź najnowsze trendy i stylowe ubrania.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategorie</h3>
+                    <ul>
+                        <li><a href="men.html">Mężczyźni</a></li>
+                        <li><a href="women.html">Kobiety</a></li>
+                        <li><a href="children.html">Dzieci</a></li>
+                        <li><a href="sale.html" class="sale-link">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informacje</h3>
+                    <ul>
+                        <li><a href="about.html">O nas</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="shipping.html">Dostawa</a></li>
+                        <li><a href="returns.html">Zwroty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Śledź nas</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Twój email">
+                            <button type="submit">Zapisz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Style Haven. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/order-confirmation.js"></script>
+</body>
+</html>
