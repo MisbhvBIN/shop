@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie - Style Haven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-nav">
+                    <a href="index.html" class="logo">SH</a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="men.html">Mężczyźni</a></li>
+                            <li><a href="women.html">Kobiety</a></li>
+                            <li><a href="children.html">Dzieci</a></li>
+                            <li><a href="sale.html" class="sale-link">Sale</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-actions">
+                    <form class="search-form">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="search" placeholder="Szukaj">
+                        </div>
+                    </form>
+                    <div class="auth-links" id="authLinks">
+                        <a href="login.html">Zaloguj</a>
+                        <span>|</span>
+                        <a href="register.html">Zarejestruj</a>
+                    </div>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>Zaloguj się</h1>
+                        <p>Wprowadź swoje dane, aby zalogować się do konta</p>
+                    </div>
+                    <form class="auth-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="twoj@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Hasło</label>
+                            <input type="password" id="password" required placeholder="••••••••">
+                            <a href="forgot-password.html" class="forgot-link">Zapomniałeś hasła?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Zaloguj się</button>
+                    </form>
+                    <div class="auth-footer">
+                        <p>Nie masz konta? <a href="register.html">Zarejestruj się</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Style Haven</h3>
+                    <p>Twoje modowe miejsce dla całej rodziny. Znajdź najnowsze trendy i stylowe ubrania.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategorie</h3>
+                    <ul>
+                        <li><a href="men.html">Mężczyźni</a></li>
+                        <li><a href="women.html">Kobiety</a></li>
+                        <li><a href="children.html">Dzieci</a></li>
+                        <li><a href="sale.html" class="sale-link">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informacje</h3>
+                    <ul>
+                        <li><a href="about.html">O nas</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="shipping.html">Dostawa</a></li>
+                        <li><a href="returns.html">Zwroty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Śledź nas</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Twój email">
+                            <button type="submit">Zapisz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Style Haven. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-title">Powiadomienie</div>
+            <div class="toast-message">Treść powiadomienia</div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            const result = window.login(email, password);
+            
+            if (result.success) {
+                window.showToast('Zalogowano pomyślnie', 'Witamy z powrotem w Style Haven!');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                window.showToast('Błąd logowania', result.message);
+            }
+        });
+    </script>
+</body>
+</html>
