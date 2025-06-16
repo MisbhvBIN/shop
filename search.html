@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyniki wyszukiwania - Style Haven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-nav">
+                    <a href="index.html" class="logo">SH</a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="men.html">Mężczyźni</a></li>
+                            <li><a href="women.html">Kobiety</a></li>
+                            <li><a href="children.html">Dzieci</a></li>
+                            <li><a href="sale.html" class="sale-link">Sale</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-actions">
+                    <form class="search-form">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="search" placeholder="Szukaj" id="searchInput">
+                        </div>
+                    </form>
+                    <div class="auth-links" id="authLinks">
+                        <a href="login.html">Zaloguj</a>
+                        <span>|</span>
+                        <a href="register.html">Zarejestruj</a>
+                    </div>
+                    <a href="account.html" class="account-link">
+                        <i class="fas fa-user"></i>
+                        Moje konto
+                    </a>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-results-section">
+            <div class="container">
+                <div class="search-header">
+                    <h1>Wyniki wyszukiwania</h1>
+                    <p id="searchQuery">Szukasz: ""</p>
+                    <p id="resultsCount">Znaleziono 0 produktów</p>
+                </div>
+
+                <div class="products-controls">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="sortBy">Sortuj według:</label>
+                            <select id="sortBy">
+                                <option value="relevance">Trafność</option>
+                                <option value="name">Nazwa</option>
+                                <option value="price-low">Cena: od najniższej</option>
+                                <option value="price-high">Cena: od najwyższej</option>
+                                <option value="rating">Ocena</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="categoryFilter">Kategoria:</label>
+                            <select id="categoryFilter">
+                                <option value="all">Wszystkie</option>
+                                <option value="men">Mężczyźni</option>
+                                <option value="women">Kobiety</option>
+                                <option value="children">Dzieci</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="priceRange">Zakres cen:</label>
+                            <select id="priceRange">
+                                <option value="all">Wszystkie</option>
+                                <option value="0-100">0 - 100 zł</option>
+                                <option value="100-200">100 - 200 zł</option>
+                                <option value="200-300">200 - 300 zł</option>
+                                <option value="300+">300+ zł</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-products-grid" id="searchResults">
+                    <!-- Search results will be loaded here -->
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>Brak wyników</h3>
+                    <p>Nie znaleziono produktów spełniających kryteria wyszukiwania.</p>
+                    <div class="search-suggestions">
+                        <h4>Spróbuj wyszukać:</h4>
+                        <ul>
+                            <li>sneakers</li>
+                            <li>koszulka</li>
+                            <li>sukienka</li>
+                            <li>buty</li>
+                            <li>bluza</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Style Haven</h3>
+                    <p>Twoje modowe miejsce dla całej rodziny. Znajdź najnowsze trendy i stylowe ubrania.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategorie</h3>
+                    <ul>
+                        <li><a href="men.html">Mężczyźni</a></li>
+                        <li><a href="women.html">Kobiety</a></li>
+                        <li><a href="children.html">Dzieci</a></li>
+                        <li><a href="sale.html" class="sale-link">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informacje</h3>
+                    <ul>
+                        <li><a href="about.html">O nas</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="shipping.html">Dostawa</a></li>
+                        <li><a href="returns.html">Zwroty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Śledź nas</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com/stylehaven" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/stylehaven" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/stylehaven" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Twój email">
+                            <button type="submit">Zapisz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Style Haven. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-title">Powiadomienie</div>
+            <div class="toast-message">Treść powiadomienia</div>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
